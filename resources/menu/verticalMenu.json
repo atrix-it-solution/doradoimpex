@@ -1,0 +1,32 @@
+{
+  "menu": [
+    {
+      "name": "Dashboard",
+      "icon": "menu-icon icon-base bx bx-home-smile",
+      "slug": "dashboard",
+      "url": "/"
+    },
+    {
+      "name": "Product",
+      "icon": "menu-icon icon-base bx bx-cube-alt",
+      "slug": "product",
+      "submenu": [
+        {
+          "url": "product",
+          "name": "All Product",
+          "slug": "product"
+        },
+        {
+          "url": "product/create",
+          "name": "Create Product",
+          "slug": "product-create"
+        },
+        {
+          "url": "productcategories",
+          "name": "Product Category",
+          "slug": "product-category"
+        }
+      ]
+    }
+  ]
+}
