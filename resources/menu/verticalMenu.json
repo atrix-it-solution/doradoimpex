@@ -27,6 +27,23 @@
           "slug": "product-category"
         }
       ]
+    },
+    {
+      "name": "Blog",
+      "icon": "menu-icon icon-base bx bx-cube-alt",
+      "slug": "blog",
+      "submenu": [
+        {
+          "url": "blog",
+          "name": "All Blog",
+          "slug": "blog"
+        },
+        {
+          "url": "blog/create",
+          "name": "Create Blog",
+          "slug": "blog-create"
+        }
+      ]
     }
   ]
 }

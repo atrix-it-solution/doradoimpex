@@ -12,7 +12,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        $blogs = blog::all();
+        return view('content.pages.blog.index', compact('blogs'));
     }
 
     /**
@@ -20,7 +21,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.pages.blog.create-edit');
     }
 
     /**
@@ -28,7 +29,26 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|string|max:255',
+            'slug' => 'required|string|max:255|unique:blogs,slug',
+            'description' => 'nullable|string',
+            'shot_description' => 'nullable|string|max:500',
+            'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
+            'author' => 'nullable|string|max:255',
+        ]);
+
+        // Handle file uploads
+        if ($request->hasFile('featured_image')) {
+            $data['featured_image'] = $request->file('featured_image')->store('blogs', 'public');
+        }
+        if ($request->hasFile('author_image')) {
+            $data['author_image'] = $request->file('author_image')->store('authors', 'public');
+        }
+
+        blog::create($data);
+
+        return redirect()->route('blog.index')->with('success', 'Blog created successfully!');
     }
 
     /**
@@ -44,7 +64,7 @@ class BlogController extends Controller
      */
     public function edit(blog $blog)
     {
-        //
+        return view('content.pages.blog.create-edit', compact('blog'));
     }
 
     /**
@@ -52,7 +72,26 @@ class BlogController extends Controller
      */
     public function update(Request $request, blog $blog)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|string|max:255',
+            'slug' => 'required|string|max:255|unique:blogs,slug,' . $blog->id,
+            'description' => 'nullable|string',
+            'shot_description' => 'nullable|string|max:500',
+            'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
+            'author' => 'nullable|string|max:255',
+        ]);
+
+        // Handle file uploads
+        if ($request->hasFile('featured_image')) {
+            $data['featured_image'] = $request->file('featured_image')->store('blogs', 'public');
+        }
+        if ($request->hasFile('author_image')) {
+            $data['author_image'] = $request->file('author_image')->store('authors', 'public');
+        }
+
+        $blog->update($data);
+
+        return redirect()->route('blog.index')->with('success', 'Blog updated successfully!');
     }
 
     /**
@@ -60,6 +99,7 @@ class BlogController extends Controller
      */
     public function destroy(blog $blog)
     {
-        //
+        $blog->delete();
+        return redirect()->route('blog.index')->with('success', 'Blog deleted successfully!');
     }
 }
