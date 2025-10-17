@@ -1,0 +1,562 @@
+/* ================ Google  Fonts  ================    */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+/* ================ Custom variable Start ================    */
+:root {
+  --text-yellow: #fbc02d;
+  --text-yellow-dark: #e6a733;
+  --text-yellow-light: #fdd843;
+  --text-black: #212529;
+  --text-z-black: #000;
+  --text-white: #fff;
+  --text-blue: #0073ff;
+  --background-yellow: #fbc02d;
+  --background-yellow-dark: #e6a733;
+  --background-yellow-light: #fdd843;
+  --background-black: #212529;
+  --background-z-black: #000;
+  --background-white: #fff;
+  --background-blue: #0073ff;
+  --background-transparent: transparent;
+  --background-gray: #f9f9f9;
+}
+/* ================ Custom variable End ================    */
+
+/* ================ website Layout Css Start ================    */
+@media (min-width: 1400px) {
+  .custom-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+/* ================ website Layout Css Start ================    */
+
+/* ================ Custom font Style Start ================    */
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+nav.navbar a {
+  color: #000;
+  font-size: 18px;
+}
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 26px;
+}
+h4 {
+  font-size: 22px;
+}
+p {
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+  color: var(--text-black);
+}
+a:hover {
+  color: unset;
+}
+/* ================ Custom font Style End ================    */
+
+/* ================ Custom Button style Start ================    */
+.button-1 {
+  background-color: var(--background-yellow);
+  color: var(--text-z-black);
+  border: 2px solid var(--background-yellow);
+  border-radius: 5px;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.button-1:hover {
+  background-color: var(--background-transparent);
+  color: var(--text-white);
+}
+
+.button-2 {
+  background-color: var(--background-yellow-dark);
+  color: var(--text-white);
+  border: none;
+  border-radius: 5px;
+  padding: 12px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.button-2:hover {
+  background-color: var(--background-yellow);
+  color: var(--text-white);
+}
+
+.button-3 {
+  background-color: var(--background-yellow);
+  color: var(--text-black);
+  border: none;
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.button-4 {
+  background-color: var(--background-transparent);
+  color: var(--text-white);
+  border: 1px solid var(--text-yellow);
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.button-5 {
+  background-color: var(--background-yellow-light);
+  color: var(--text-black);
+  border: none;
+  border-radius: 5px;
+  padding: 14px 35px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+}
+/* ================ Custom Button style End ================    */
+
+/* ================utility class Start ================    */
+.sec-padding {
+  padding: 45px 0;
+}
+.sec-margin {
+  margin: 45px 0;
+}
+.sec-spacing {
+  padding: 45px 0;
+  margin: 45px 0;
+}
+/* ================utility class End ================    */
+
+/* ================ Navbar Css Start ================    */
+.navbar-bg {
+  background-color: rgba(255, 255, 255, 0.904);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* ================ Navbar Css End ================    */
+
+/* ================ Banner Css Start ================    */
+.banner-section {
+  padding-top: 70px;
+  overflow-x: hidden;
+}
+.banner-slider .slide-1,
+.banner-slider .slide-2,
+.banner-slider .slide-3 {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 50px;
+  position: relative;
+  z-index: 1;
+}
+.banner-slider .slide-1 {
+  background: url(../images/landing-Banner-1.jpg) no-repeat center center/cover;
+}
+.banner-slider .slide-2 {
+  background: url(../images/landing-Banner-2.jpg) no-repeat center center/cover;
+}
+.banner-slider .slide-3 {
+  background: url(../images/landing-Banner-1.jpg) no-repeat center center/cover;
+}
+.banner-slider {
+  color: white;
+}
+
+.banner-slider p {
+  font-size: 26px;
+}
+
+.banner-slider ul.slick-dots {
+  margin-bottom: 60px;
+}
+
+.banner-slider .slick-dots li button:before {
+  height: 15px;
+  width: 15px;
+  background: #6c6e71;
+  border-radius: 50%;
+  color: var(--background-transparent);
+}
+
+.banner-slider .slick-dots li.slick-active button:before {
+  background: var(--background-yellow);
+  color: var(--background-transparent);
+}
+
+.banner-slider .slide-1::before,
+.banner-slider .slide-2::before,
+.banner-slider .slide-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* black overlay with 0.4 opacity */
+  z-index: 2;
+}
+
+.banner-slider .slide-1 > *,
+.banner-slider .slide-2 > *,
+.banner-slider .slide-3 > * {
+  position: relative;
+  z-index: 3;
+}
+/* ================ Banner Css Start ================    */
+
+/* ================ service section Css Start ================    */
+.services-section .service-box {
+  background: #f5f5f5;
+  transition: all 0.3s ease;
+}
+.services-section .service-box:hover {
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+/* ================ service section Css End ================    */
+
+/* ================ About CSS Start ================    */
+.about-sec {
+  background: var(--background-gray);
+}
+.about-sec .sub-heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-black);
+}
+.about-sec h2 {
+  font-size: 42px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  line-height: 1.2em;
+}
+.tab-section {
+  /* padding: 80px 0; */
+}
+
+.nav-tabs {
+  border-bottom: none;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  background: transparent;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.nav-tabs .nav-link.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.nav-tabs .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background-color: #f9b400;
+  border-radius: 2px;
+}
+
+.tab-content {
+  background: #fff;
+  padding: 40px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tab-content p {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ================ About Css End ================    */
+
+/* ================ CTA Css Start ================  */
+.cta-section {
+  background: url(../images/Business-con-banner.jpg) no-repeat center
+    center/cover;
+  color: white;
+  position: relative;
+  z-index: 1;
+  height: 400px;
+  display: flex;
+  align-items: center;
+}
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* black overlay with 40% opacity */
+  z-index: 2;
+}
+
+.cta-section > * {
+  position: relative;
+  z-index: 3;
+}
+.cta-section h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+.cta-section p {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+/* ================ CTA CSS End ================  */
+
+/* ================ Advantages CSS Start ================  */
+.advantage-sec .sec-heading-1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.advantage-sec .sec-heading-2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.advantage-sec .colored-stripe {
+  background-color: rgb(241, 241, 241);
+  padding: 3px 15px;
+  position: relative;
+  z-index: 1;
+}
+.advantage-sec .colored-stripe::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+  background: var(--background-yellow);
+  z-index: 2;
+}
+.advantage-sec .colored-stripe > * {
+  position: relative;
+  z-index: 3;
+}
+.advantage-sec .colored-stripe.stripe-1::before {
+  width: 70%;
+}
+.advantage-sec .colored-stripe.stripe-2::before {
+  width: 78%;
+}
+
+.advantage-sec .colored-stripe.stripe-3::before {
+  width: 86%;
+}
+.advantage-sec .colored-stripe.stripe-4::before {
+  width: 94%;
+}
+/* ================ Advantages CSS End ================  */
+
+/* ================ Steps CSS Start ================  */
+.steps-sec .num {
+  font-size: 110px;
+  color: #eeeeee;
+  font-weight: 700;
+}
+.steps-sec .step-wrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* ================ Steps CSS End ================  */
+
+/* ================ Form section  CSS End ================  */
+.form-sec {
+  background: var(--background-gray);
+  padding: 100px 0;
+}
+
+.callback-form input:focus {
+  box-shadow: none;
+  border-color: #ffc107;
+}
+
+.callback-form .form-check {
+  text-align: left;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.callback-btn {
+  background-color: #ffc107;
+  color: #000;
+  font-weight: 500;
+  border: none;
+  width: 70%;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.callback-btn:hover {
+  background-color: #eab308;
+  color: #000;
+}
+
+.callback-btn i {
+  margin-right: 8px;
+}
+/* ================ Form section  CSS End ================  */
+
+/* ================ Why choose Css Start ================ */
+.why-choose-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.why-choose-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-top: 35px;
+}
+
+.why-choose-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--background-yellow);
+  font-weight: bold;
+  font-size: 17px;
+}
+/*  ================ Why choose Css End ================ */
+
+/*  ================ Footer Css Start ================ */
+.footer-sec {
+  border-top: 1px solid rgba(0, 0, 0, 0.233);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.233);
+  padding: 80px 0;
+}
+.footer-sec ul {
+  margin-top: 20px;
+}
+.footer-sec ul li {
+  margin-bottom: 15px;
+}
+.footer-sec .our-app-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 5 menus per line */
+  gap: 5px;
+  width: 100%;
+}
+/*  ================ Footer Css End ================ */
+
+/*  ================ Common page header Css Start ================ */
+/* .page-heading {
+  margin-top: 70px;
+  background: url(../images/about-top-banner.jpg);
+  position: relative;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+} */
+.page-heading::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: #0000008e;
+}
+
+.page-heading .content {
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+
+.page-heading h1 {
+  font-size: 44px;
+  font-weight: 600;
+}
+
+/*  ================ Common page header Css End ================ */
+
+/* navbar droupdown css  */
+ul.dropdown-menu li {
+  margin-bottom: 15px;
+}
+ul.dropdown-menu {
+  border: none;
+}
+
+ul.dropdown-menu {
+  border-top: 3px solid #000000b0;
+}
+
+@media screen and (max-width: 1200px) {
+  nav .navbar-collapse {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100% !important;
+    z-index: 9999;
+    background-color: #fff;
+    width: 70%;
+    max-width: 340px;
+    padding: 30px !important;
+    min-height: 100vh;
+    max-height: 100%;
+    overflow: auto;
+    transition: all 0.4s ease;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.3);
+    transform: translateX(-100%);
+    visibility: hidden;
+    /* opacity: 0; */
+  }
+}
+@media screen and (max-width: 1200px) {
+    nav .navbar-collapse.show {
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+    }
+}

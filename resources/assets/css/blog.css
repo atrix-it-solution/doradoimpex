@@ -1,0 +1,75 @@
+.blog-heading {
+  margin-top: 70px;
+}
+.blog-heading-h1 {
+  font-size: 42px;
+  border-bottom: 4px solid #00b4d8;
+  padding-bottom: 10px;
+}
+.blog-details {
+  background-color: #20247b;
+  height: fit-content;
+  width: fit-content;
+  padding: 3px 15px;
+  color: white;
+  font-size: 14px;
+}
+
+
+.blog-card {
+
+    box-shadow: 0 0 10px 3px rgba(78, 78, 78, 0.15)!important;
+} 
+.latest-post-sec{
+  box-shadow: 0 0 10px 3px rgba(78, 78, 78, 0.15)!important;
+}
+.latest-card-img{
+  width: 90px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.latest-card-img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.latest-post-sec .sec-heading h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #20247b;
+}
+
+
+.latest-post-heading h5 {
+  font-size: 15px;
+    color: #20247b;
+    font-weight: 600;
+}
+
+.latest-post-info a {
+    font-size: 14px;
+}
+
+.latest-card:not(:last-child) {
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+.tags-wrapper span{
+  background: #20247b;
+  color: white;
+  font-size: 13px;
+  padding: 4px 15px;   
+  border-radius: 5px; 
+  display: inline-block;
+}
+.tags-wrapper span:hover{
+  background: #023E8A;
+  cursor: pointer;
+}
+.blog-content h4{
+  font-size: 22px;
+  font-weight: 700;
+  color: #20247b;
+}

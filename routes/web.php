@@ -15,7 +15,31 @@ use App\Http\Middleware\CheckTokenExpiration;
 
 
 Route::get('/', function () {
-    return view('frontend.home');
+    return view('frontend.home.homepage');
+});
+Route::get('/about', function () {
+    return view('frontend.pages.about.about');
+});
+Route::get('/blog', function () {
+    return view('frontend.pages.blog.blog');
+});
+Route::get('/contact', function () {
+    return view('frontend.pages.contact.contact');
+});
+Route::get('/3d-printer', function () {
+    return view('frontend.pages.products.3d-printer');
+});
+Route::get('/3d-printer', function () {
+    return view('frontend.pages.products.3d-printer');
+});
+Route::get('/3d-printer-software', function () {
+    return view('frontend.pages.products.3d-printer-software');
+});
+Route::get('/3d-printing-resin', function () {
+    return view('frontend.pages.products.3d-printing-resin');
+});
+Route::get('/3d-printing-service', function () {
+    return view('frontend.pages.products.3d-printing-service');
 });
 Route::middleware('auth:sanctum')->get('/check-token', [LoginBasic::class, 'checkToken']);
     

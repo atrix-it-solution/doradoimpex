@@ -1,0 +1,64 @@
+.page-heading {
+  margin-top: 70px;
+  background: url(../images/about-top-banner.jpg);
+  position: relative;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.we-are-section .we-are-img{
+    max-width: 70%;
+}
+.we-are-section p{
+    line-height: 1.7rem;
+}
+
+.about-3 ul li{
+    margin-bottom: 10px;
+}
+.about-3 ul{
+    list-style: none;
+    padding: 0;
+   
+}
+.about-3 ul li{
+     position: relative;
+     padding-left: 25px;
+}
+.about-3 ul li::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 8px;
+    width: 8px;
+    background: var(--background-yellow);
+    border-radius: 50%;
+}
+.about-4 .team-img{
+    height: 160px;
+    min-width: 160px;
+    max-width: 160px;
+    border-radius: 0 50% 50% 50%;
+    overflow: hidden;
+}
+.about-4 .team-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.about-4 p{
+    line-height: 1.7rem;
+    text-align: justify;
+}
+.team-card{
+    margin-bottom: 30px;
+}
+.team-content{
+    max-width: 350px;
+}
+.team-card h3{
+    font-weight: 600;
+}

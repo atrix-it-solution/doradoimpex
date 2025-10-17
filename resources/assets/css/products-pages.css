@@ -1,0 +1,157 @@
+.printer-product-card .product-img-wrapper {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 16/12;
+}
+
+.printer-product-card .product-img-wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+.printer-product-card h5 {
+  color: #036;
+  font-weight: 600;
+}
+.image-content-card hr {
+  width: 100px;
+  height: 3px;
+  background: var(--background-yellow);
+  border: none;
+  margin-top: 0;
+  opacity: 1;
+  margin-top: 15px;
+}
+.image-content-card ul li {
+  /* padding-left: 15px; */
+  position: relative;
+  margin-left: 35px;
+  margin-bottom: 12px;
+  line-height: 1.5rem;
+}
+.image-content-card ul li:hover {
+  color: #f97316;
+}
+.image-content-card ul li::before {
+  content: "\f058";
+  font-family: "Font Awesome 7 Free";
+  font-weight: 900;
+  color: #f97316;
+  font-size: 18px;
+  margin-right: 8px;
+  position: absolute;
+  left: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.product-page-banner {
+  margin-top: 70px;
+  background: url("../images/landing-Banner-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+.product-page-banner::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.418);
+}
+.product-page-banner * {
+  position: relative;
+  z-index: 3;
+}
+.service-buttons-sec {
+  background: url("../images/3d-printer-software-banner-2-bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 130px 0;
+}
+
+.service-buttons-sec{
+    text-align: center;
+}
+.service-buttons-sec h1{
+    font-size: 48px;
+    font-weight: 700;
+}
+.service-buttons-sec h2{
+    font-size: 40px;
+    font-weight: 600;
+}
+.service-buttons-sec p{
+    font-size: 24px;
+    color: #f97316;
+}
+
+
+
+
+.service-btn {
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 35px 40px;
+  background: #fff;
+  color: #333;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.service-btn span{
+    margin-left: 20px;
+}
+
+.service-btn:hover {
+  border-color: #ff8000;
+  color: #ff8000;
+}
+
+.service-btn.active {
+  border: 2px solid #ff8000;
+  color: #ff8000;
+  background: #fff;
+}
+
+.image-box img {
+  transition: opacity 0.5s ease-in-out;
+}
+.section.cta-section.sec-spacing {
+    height: 320px;
+}
+.why-choose-heading hr {
+    width: 100px;
+    height: 3px;
+    background: var(--background-yellow);
+    border: none;
+    margin-top: 0;
+    opacity: 1;
+    margin-top: 15px;
+}
+.why-choose-icon{
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  color: #00b4d8;
+}
+.why-choose-card{
+      box-shadow: 0 0 36px 0px rgba(0, 0, 0, .15) !important;
+}
+.why-choose.creater-porject .why-choose-icon{
+  font-size: 40px;
+  color: #FDD835;
+}

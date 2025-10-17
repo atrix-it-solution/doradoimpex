@@ -1,0 +1,190 @@
+.page-heading {
+  margin-top: 70px;
+  background: url(../images/automotive-top-banner.jpg);
+  position: relative;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.overview-sec h2{
+    font-size: 42px;
+    font-weight: 700;
+}
+.overview-sec .button-3{
+    display: inline-block;
+    margin-top: 10px;
+}
+.overview-sec p{
+    line-height: 1.7rem;
+}
+.overview-sec ul{
+    list-style: none;
+}
+.overview-sec ul li{
+    position: relative;
+    margin-bottom: 10px;
+}
+.overview-sec ul li::before{
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    background: #00bcd4;
+    border-radius: 50%;
+    top: 50%;
+    left: -25px;
+    transform: translateY(-50%)
+}
+
+
+.desc-1 ul li{
+    margin-bottom: 10px;
+}
+.desc-2-with-cards .card-wrapper{
+    display: flex;
+}
+
+.desc-2-with-cards .card-icon{
+    min-width: 60px;
+    min-height: 60px;
+    align-self: self-start;
+    background: rgb(236, 236, 236);
+    border-radius: 15px;
+    font-size: 26px;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    color:#00BCD4 ;
+}
+
+.desc-2-with-cards .card-section .card-desc h4{
+    font-size: 17px;
+    font-weight: 600;
+}
+.desc-2-with-cards .card-section .card-desc p{
+    font-size: 14px;
+}
+
+.app-right-sec .sec-heading h3{
+    font-size: 20px;
+    font-weight: 600;
+} 
+.app-right-sec .sec-heading hr {
+  width: 150px;
+  height: 3px;
+  background: var(--background-yellow-light);
+  border: none;         
+  margin-top: 0;          
+  opacity: 1;     
+  margin-top: 15px;       
+  margin-bottom: 70px;   
+}
+.app-pages-link-wrapper ul li{
+    padding: 12px 15px;
+    border: 1px solid rgb(230, 230, 230);
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.app-pages-link-wrapper ul li.active{
+    background-color:#fdd835;
+    color: #fff;
+}
+.app-pages-link-wrapper ul li.active a{
+    font-weight: 600;
+    color: white;
+}
+.app-pages-link-wrapper ul li.active:hover a{
+    color: black;
+}
+.app-pages-link-wrapper ul li.active:hover{
+    background: white;
+}
+
+.app-pages-link-wrapper ul li:hover a{
+    color: var(--background-yellow);
+}
+
+.app-cta{
+    background: url(../images/auto-shield-2161515555.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 80px 0;
+}
+.app-cta::before{
+    content: '';
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.377);
+    
+}
+.app-cta *{
+    position: relative;
+    z-index: 3;
+}
+.app-cta , .app-cta a{
+    color: white;
+    text-align: center;
+}
+.app-cta h2{
+    font-size: 22px;
+    text-align: center;
+}
+.app-cta .cta-sub-heading{
+    color: #fdd835;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+
+
+/* vartical product  slider  */
+.vertical-product-slider{
+    max-width: 100%;
+    overflow: hidden;
+}
+.vertical-product-slider .product-card{
+    min-height: 1300px;
+}
+.vertical-product-slider .product-card h3{
+    font-size: 20px;
+}
+.vertical-product-slider .product-card ul {
+    padding-left: 15px;
+    margin-bottom: 40px;
+}
+.vertical-product-slider .product-card ul li{
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+.vertical-product-slider .product-card h5{
+    font-size: 17px;
+    color: #f97316;
+    margin-bottom: 10px;
+}
+
+.vertical-product-slider .slick-dots li button:before {
+    font-size: 10px;
+    top: unset;
+    bottom:30px;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .1;
+}
+.vertical-product-slider .slick-dots li.slick-active button:before {
+    color: #FDD835;
+    opacity: 1;
+}
+.vertical-product-slider .product-section{
+    padding: 0 50px;
+}

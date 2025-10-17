@@ -1,0 +1,109 @@
+   .login-container {
+      max-width: 1000px;
+      margin: 100px auto;
+      background: linear-gradient(to right, #02006b, #1b75bb);
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .login-left {
+      background: linear-gradient(to bottom, #02006b, #01409c);
+      color: white;
+      text-align: center;
+      padding: 60px 40px;
+      flex: 1 1 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .login-left .icon {
+      font-size: 80px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-left p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .login-right {
+      background: linear-gradient(to bottom right, #1e5ea6, #2da8dc);
+      flex: 1 1 60%;
+      padding: 60px 50px;
+    }
+
+    .login-right h3 {
+      color: #02006b;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .form-control {
+      border-radius: 10px;
+      padding: 12px 15px;
+      border: none;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+      border: 1px solid #1e5ea6;
+      background: #fff;
+    }
+
+    .login-right .btn {
+      width: 100%;
+      background: #ff5400;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .login-right .btn:hover {
+      background: #e24a00;
+    }
+
+    .login-right .links {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .login-right .links a {
+      color: #02006b;
+      text-decoration: none;
+    }
+
+    .login-right .links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .login-container {
+        flex-direction: column;
+      }
+    }
+
+    .signup-sign-form{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
