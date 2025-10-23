@@ -31,7 +31,7 @@
                         <div class="row shadow rounded-3">
                             <div class="col-lg-6 p-4 d-flex align-items-center justify-content-center">
                                 <div class="card-img-wrp">
-                                    <img src="images/image-1.png" alt="" class="img-fluid rounded-4">
+                                    <img src="{{ Vite::asset('resources/assets/images/image-1.png') }}" alt="" class="img-fluid rounded-4">
                                 </div>
                             </div>
                             <div class="col-lg-6 p-4 d-flex align-items-center">
@@ -160,10 +160,10 @@
                         </div>
                         <div class="app-pages-link-wrapper">
                            <ul class="list-unstyled">
-                                <li><a href="products/3d-printer">3D Printer</a></li>
-                                <li><a href="products/3d-printer-software">3D Printer Software</a></li>
-                                <li><a href="products/3d-printing-resin">3D Printing Resin</a></li>
-                                <li class="active"><a href="products/3d-printing-service">3D Printing Serv    ice</a></li>
+                                <li><a href="/products/3d-printer">3D Printer</a></li>
+                                <li><a href="/products/3d-printer-software">3D Printer Software</a></li>
+                                <li><a href="/products/3d-printing-resin">3D Printing Resin</a></li>
+                                <li class="active"><a href="/products/3d-printing-service">3D Printing Serv    ice</a></li>
                             </ul>
                         </div>
                         <div class="app-cta rounded-3 ">
@@ -185,7 +185,7 @@
                                  <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-1.png" alt="DoradoImpex Clear-Resin Ultra"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-1.png') }}" alt="DoradoImpex Clear-Resin Ultra"
                                                 class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -225,7 +225,7 @@
                                  <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-2.png"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-2.png') }}"
                                                 alt="DoradoImpex DP-300 Professional 3D Printer" class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -269,7 +269,7 @@
                                  <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-3.png"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-3.png') }}"
                                                 alt="DoradoImpex DP-500 Industrial 3D Printer" class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -316,7 +316,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-4.png"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-4.png') }}"
                                                 alt="DoradoImpex DP-200 Compact 3D Printer" class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -360,7 +360,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-5.png" alt="DoradoImpex Flex-Resin 200"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-5.png') }}" alt="DoradoImpex Flex-Resin 200"
                                                 class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -402,7 +402,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-6.png" alt="DoradoImpex Dental-Resin Pro"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-6.png') }}" alt="DoradoImpex Dental-Resin Pro"
                                                 class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -443,7 +443,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-7.png" alt="DoradoImpex Tough-Resin X500"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-7.png') }}" alt="DoradoImpex Tough-Resin X500"
                                                 class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -484,7 +484,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-8.png"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-8.png') }}"
                                                 alt="DoradoImpex DP-700 Ultra Precision 3D Printer" class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">

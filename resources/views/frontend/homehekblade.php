@@ -15,11 +15,11 @@
         </button>
 
         <button id="login-btn">
-            <a href="/auth/login-basic" class="login-link">Login</a>
+            <a href="/signin" class="login-link">Login</a>
         </button>
 
         <button id="register-btn">
-            <a href="/auth/register-basic" class="login-link">Register</a>
+            <a href="/signup" class="login-link">Register</a>
         </button>
 
         <!-- Dashboard button for admin users -->
@@ -103,7 +103,7 @@
                 localStorage.removeItem('user');
                 localStorage.removeItem('token_expires_at');
                 alert('Your session has expired. Please login again.');
-                window.location.href = '/auth/login-basic';
+                window.location.href = '/signin';
                 return;
             }
             
@@ -149,7 +149,7 @@
                     localStorage.removeItem('user');
                     localStorage.removeItem('token_expires_at');
                     alert('Your session has expired. Please login again.');
-                    window.location.href = '/auth/login-basic';
+                    window.location.href = '/signin';
                 }
             }
         } catch (error) {
@@ -181,7 +181,7 @@
             localStorage.removeItem('token_expires_at');
             
             // Redirect to login
-            window.location.href = '/auth/login-basic';
+            window.location.href = '/signin';
         }
     }
     </script>

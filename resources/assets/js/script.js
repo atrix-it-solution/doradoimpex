@@ -47,10 +47,10 @@ document.querySelectorAll(".service-btn").forEach((btn) => {
 $(".vertical-product-slider").slick({
   dots: true,
   infinite: true,
-  speed: 300,
+  speed: 5000,
   slidesToShow: 1,
   vertical: true,
   adaptiveHeight: true,
   autoplay: true,
-  autoplaySpeed: 300,
+  autoplaySpeed: 5000,
 });

@@ -27,78 +27,26 @@
                 <div class="col-lg-8">
                     <div class="printer-products">
                         <div class="row g-4">
+                            @foreach($products as $product)
                             <div class="col-lg-6">
-                                <div class="printer-product-card shadow py-2 rounded-4">
-                                    <div class="product-img-wrapper p-4">
-                                        <img src="images/printer-product-1.png" alt="app product image"
-                                            class="rounded-3">
+                                <a href="{{ route('products.show', $product->slug) }}" class="text-decoration-none">
+                                    <div class="printer-product-card shadow py-2 rounded-4">
+                                        <div class="product-img-wrapper p-4">
+                                            <img src="{{ Storage::url($product->image) }}" alt="app product image"
+                                                class="rounded-3">
+                                        </div>
+                                        <div class="product-heading">
+                                            <h5 class="text-center px-4">{{ $product->title }}</h5>
+                                        </div>
+                                        <p class="text-center px-4">
+                                            {{ Str::limit(strip_tags($product->description), 250) }}
+                                        </p>
                                     </div>
-                                    <div class="product-heading">
-                                        <h5 class="text-center px-4">DoradoImpex DP-300 Professional 3D Printer</h5>
-                                    </div>
-                                    <p class="text-center px-4">
-                                        The DoradoImpex DP-300 is a professional-grade 3D printer designed for
-                                        engineers, designers, and educators who demand precision and reliability. With a
-                                        large build volume and high-resolution printing capabilities, it ensures
-                                        consistent performance for both prototypes and end-use parts. Its silent
-                                        operation and advanced recovery functions make it ideal for long-duration
-                                        projects.
-                                    </p>
-                                </div>
+                                </a>
+
                             </div>
-                            <div class="col-lg-6">
-                                <div class="printer-product-card shadow py-2 rounded-4">
-                                    <div class="product-img-wrapper p-4">
-                                        <img src="images/printer-product-2.png" alt="app product image"
-                                            class="rounded-3">
-                                    </div>
-                                    <div class="product-heading">
-                                        <h5 class="text-center px-4">DoradoImpex DP-500 Industrial 3D Printer</h5>
-                                    </div>
-                                    <p class="text-center px-4">
-                                        The DP-500 is an industrial-grade 3D printer engineered for large-scale
-                                        manufacturing and advanced material compatibility. Its dual-extruder system and
-                                        ultra-large build volume enable simultaneous multi-material printing or support
-                                        structures. Designed with a heated chamber and WiFi-enabled controls, the DP-500
-                                        is a powerhouse for automotive, aerospace, and heavy-duty prototyping
-                                        industries.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="printer-product-card shadow py-2 rounded-4">
-                                    <div class="product-img-wrapper p-4">
-                                        <img src="images/printer-product-3.png" alt="app product image"
-                                            class="rounded-3">
-                                    </div>
-                                    <div class="product-heading">
-                                        <h5 class="text-center px-4">DoradoImpex DP-200 Compact 3D Printer</h5>
-                                    </div>
-                                    <p class="text-center px-4">
-                                        The DoradoImpex DP-200 is a compact and affordable 3D printer designed for
-                                        hobbyists, students, and beginners. With a smaller footprint and easy-to-use
-                                        interface, it delivers reliable prints while being accessible for first-time
-                                        users. Perfect for classrooms, home projects, and makerspaces.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="printer-product-card shadow py-2 rounded-4">
-                                    <div class="product-img-wrapper p-4">
-                                        <img src="images/printer-product-4.png" alt="app product image"
-                                            class="rounded-3">
-                                    </div>
-                                    <div class="product-heading">
-                                        <h5 class="text-center px-4">DoradoImpex DP-700 Ultra Precision 3D Printer</h5>
-                                    </div>
-                                    <p class="text-center px-4">
-                                        The DoradoImpex DP-700 is a high-end professional 3D printer focused on
-                                        ultra-precision and advanced functionality. With a reinforced structure, auto
-                                        bed leveling, and advanced material support, it’s the ultimate solution for
-                                        industries requiring fine detail and consistent reliability.
-                                    </p>
-                                </div>
-                            </div>
+                            @endforeach
+                        
                         </div>
                     </div>
 
@@ -177,6 +125,7 @@
                     </div>
 
                 </div>
+
                 <div class="col-lg-4 ps-lg-3">
                     <div class="app-right-sec">
                         <div class="sec-heading">
@@ -185,10 +134,10 @@
                         </div>
                         <div class="app-pages-link-wrapper">
                             <ul class="list-unstyled">
-                                <li class="active"><a href="products/3d-printer">3D Printer</a></li>
-                                <li><a href="products/3d-printer-software">3D Printer Software</a></li>
-                                <li><a href="products/3d-printing-resin">3D Printing Resin</a></li>
-                                <li><a href="products/3d-printing-service">3D Printing Service</a></li>
+                                <li class="active"><a href="/products/3d-printer">3D Printer</a></li>
+                                <li><a href="/products/3d-printer-software">3D Printer Software</a></li>
+                                <li><a href="/products/3d-printing-resin">3D Printing Resin</a></li>
+                                <li><a href="/products/3d-printing-service">3D Printing Service</a></li>
                             </ul>
                         </div>
                         <div class="app-cta rounded-3 ">
@@ -210,7 +159,7 @@
                                  <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-1.png" alt="DoradoImpex Clear-Resin Ultra"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-1.png') }}" alt="DoradoImpex Clear-Resin Ultra"
                                                 class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -250,7 +199,7 @@
                                  <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-2.png"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-3.png') }}"
                                                 alt="DoradoImpex DP-300 Professional 3D Printer" class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -294,7 +243,7 @@
                                  <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-3.png"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-3.png') }}"
                                                 alt="DoradoImpex DP-500 Industrial 3D Printer" class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -341,7 +290,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-4.png"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-1.png') }}""
                                                 alt="DoradoImpex DP-200 Compact 3D Printer" class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -385,7 +334,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-5.png" alt="DoradoImpex Flex-Resin 200"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-5.png') }}" alt="DoradoImpex Flex-Resin 200"
                                                 class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -427,7 +376,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-6.png" alt="DoradoImpex Dental-Resin Pro"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-6.png') }}" alt="DoradoImpex Dental-Resin Pro"
                                                 class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -468,7 +417,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-7.png" alt="DoradoImpex Tough-Resin X500"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-7.png') }}" alt="DoradoImpex Tough-Resin X500"
                                                 class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -509,7 +458,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-8.png"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-8.png') }}"
                                                 alt="DoradoImpex DP-700 Ultra Precision 3D Printer" class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">

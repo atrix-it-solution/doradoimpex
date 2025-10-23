@@ -17,6 +17,15 @@ class BlogController extends Controller
     }
 
     /**
+     * Display blog listing FOR FRONTEND WEBSITE
+     */
+    public function frontendIndex()
+    {
+        $blogs = Blog::latest()->get();
+        return view('frontend.pages.blog.blog', compact('blogs')); // Frontend view
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -51,12 +60,12 @@ class BlogController extends Controller
         return redirect()->route('blog.index')->with('success', 'Blog created successfully!');
     }
 
-    /**
-     * Display the specified resource.
+   /**
+     * Display the specified resource FOR FRONTEND
      */
-    public function show(blog $blog)
+    public function show(Blog $blog)
     {
-        //
+        return view('frontend.pages.blog.single-blog', compact('blog')); // Frontend single blog view
     }
 
     /**

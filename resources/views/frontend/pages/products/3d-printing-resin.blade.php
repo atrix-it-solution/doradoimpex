@@ -29,72 +29,24 @@
                     <!-- PRODUCT CARDS  -->
                     <div class="printer-products">
                         <div class="row g-4">
+                            @foreach($products as $product)
                             <div class="col-lg-6">
-                                <div class="printer-product-card shadow py-2 rounded-4">
-                                    <div class="product-img-wrapper p-4">
-                                        <img src="images/product-img5.png" alt="app product image" class="rounded-3">
+                                <a href="{{ route('products.show', $product->slug) }}" class="text-decoration-none">
+                                    <div class="printer-product-card shadow py-2 rounded-4">
+                                        <div class="product-img-wrapper p-4">
+                                            <img src="{{ Storage::url($product->image) }}" alt="app product image" class="rounded-3">
+                                        </div>
+                                        <div class="product-heading">
+                                            <h5 class="text-center px-4">{{ $product->title }}</h5>
+                                        </div>
+                                        <p class="text-center px-4">
+                                        {{ Str::limit(strip_tags($product->description), 250) }}
+                                        </p>
                                     </div>
-                                    <div class="product-heading">
-                                        <h5 class="text-center px-4">DoradoImpex Flex-Resin 200</h5>
-                                    </div>
-                                    <p class="text-center px-4">
-                                        Flex-Resin 200 is a high-performance elastic resin designed for functional
-                                        prototypes and parts requiring extreme flexibility. With superior tear
-                                        resistance and excellent rebound properties, it is perfect for creating wearable
-                                        devices, flexible connectors, and stress-resistant components. Its low viscosity
-                                        ensures easy printing and smooth surface finishes.
-                                    </p>
-                                </div>
+                                </a>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="printer-product-card shadow py-2 rounded-4">
-                                    <div class="product-img-wrapper p-4">
-                                        <img src="images/product-img2.png" alt="app product image" class="rounded-3">
-                                    </div>
-                                    <div class="product-heading">
-                                        <h5 class="text-center px-4">DoradoImpex Dental-Resin Pro</h5>
-                                    </div>
-                                    <p class="text-center px-4">
-                                        Dental-Resin Pro is a biocompatible and medical-grade resin engineered for
-                                        dental professionals. It provides excellent accuracy, low shrinkage, and high
-                                        strength, making it suitable for surgical guides, orthodontic models, and
-                                        prosthetic applications. Its stability under sterilization ensures safety and
-                                        reliability in clinical environments.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="printer-product-card shadow py-2 rounded-4">
-                                    <div class="product-img-wrapper p-4">
-                                        <img src="images/product-img3.png" alt="app product image" class="rounded-3">
-                                    </div>
-                                    <div class="product-heading">
-                                        <h5 class="text-center px-4">DoradoImpex Tough-Resin X500</h5>
-                                    </div>
-                                    <p class="text-center px-4">
-                                        Tough-Resin X500 is formulated for functional prototypes and engineering
-                                        applications that demand durability and impact resistance. With a balance of
-                                        stiffness and toughness, it is suitable for mechanical parts, enclosures, and
-                                        end-use components. It delivers precise prints with minimal shrinkage, ensuring
-                                        dimensional stability in demanding projects.
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="printer-product-card shadow py-2 rounded-4">
-                                    <div class="product-img-wrapper p-4">
-                                        <img src="images/product-img4.png" alt="app product image" class="rounded-3">
-                                    </div>
-                                    <div class="product-heading">
-                                        <h5 class="text-center px-4">DoradoImpex Clear-Resin Ultra</h5>
-                                    </div>
-                                    <p class="text-center px-4">
-                                        Clear-Resin Ultra is a premium transparent resin designed for aesthetic models,
-                                        optical prototypes, and parts requiring high clarity. With low viscosity and
-                                        fast curing, it produces crystal-clear prints with minimal yellowing. Ideal for
-                                        lenses, light covers, and artistic designs where clarity and detail matter most.
-                                    </p>
-                                </div>
-                            </div>
+                             @endforeach
+                           
                         </div>
                     </div>
                     <!-- DESCRIPTION 1   -->
@@ -178,10 +130,10 @@
                         </div>
                         <div class="app-pages-link-wrapper">
                             <ul class="list-unstyled">
-                                <li><a href="products/3d-printer">3D Printer</a></li>
-                                <li><a href="products/3d-printer-software">3D Printer Software</a></li>
-                                <li class="active"><a href="products/3d-printing-resin">3D Printing Resin</a></li>
-                                <li><a href="products/3d-printing-service">3D Printing Serv    ice</a></li>
+                                <li><a href="/products/3d-printer">3D Printer</a></li>
+                                <li><a href="/products/3d-printer-software">3D Printer Software</a></li>
+                                <li class="active"><a href="/products/3d-printing-resin">3D Printing Resin</a></li>
+                                <li><a href="/products/3d-printing-service">3D Printing Serv    ice</a></li>
                             </ul>
                         </div>
                         <div class="app-cta rounded-3 ">
@@ -203,7 +155,7 @@
                                  <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-1.png" alt="DoradoImpex Clear-Resin Ultra"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-1.png') }}" alt="DoradoImpex Clear-Resin Ultra"
                                                 class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -243,7 +195,7 @@
                                  <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-2.png"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-2.png') }}"
                                                 alt="DoradoImpex DP-300 Professional 3D Printer" class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -287,7 +239,7 @@
                                  <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-3.png"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-3.png') }}"
                                                 alt="DoradoImpex DP-500 Industrial 3D Printer" class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -334,7 +286,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-4.png"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-4.png') }}"
                                                 alt="DoradoImpex DP-200 Compact 3D Printer" class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -378,7 +330,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-5.png" alt="DoradoImpex Flex-Resin 200"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-5.png') }}" alt="DoradoImpex Flex-Resin 200"
                                                 class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -420,7 +372,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-6.png" alt="DoradoImpex Dental-Resin Pro"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-6.png') }}" alt="DoradoImpex Dental-Resin Pro"
                                                 class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -461,7 +413,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-7.png" alt="DoradoImpex Tough-Resin X500"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-7.png') }}" alt="DoradoImpex Tough-Resin X500"
                                                 class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">
@@ -502,7 +454,7 @@
                                 <a href="products/product-1">
                                     <div class="product-card border border-1 rounded-3">
                                         <div class="product-img-wrapper p-4">
-                                            <img src="images/product-image-8.png"
+                                            <img src="{{ Vite::asset('resources/assets/images/product-image-8.png') }}"
                                                 alt="DoradoImpex DP-700 Ultra Precision 3D Printer" class="img-fluid" />
                                         </div>
                                         <div class="product-heading mb-5">

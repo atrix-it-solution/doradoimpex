@@ -13,7 +13,7 @@ class LoginBasic extends Controller
 {
     public function index()
     {
-        return view('content.authentications.auth-login-basic');
+        return view('content.authentications.signin');
     }
 
 public function login(Request $request)
@@ -30,7 +30,7 @@ public function login(Request $request)
             $user->tokens()->delete();
             
             // Create token with 5-minute expiration for testing
-            $token = $user->createToken('auth-token', ['*'], now()->addMinutes(5))->plainTextToken;
+            $token = $user->createToken('auth-token', ['*'], now()->addHours(24))->plainTextToken;
 
             // Store token in session for blade views
             session(['auth_token' => $token]);
@@ -39,7 +39,7 @@ public function login(Request $request)
             $request->session()->regenerate();
 
             // Calculate token expiration time (5 minutes from now)
-            $expiresAt = now()->addMinutes(5)->timestamp;
+            $expiresAt = now()->addHours(24)->timestamp;
 
             // Return JSON response with token for AJAX requests
             if ($request->expectsJson()) {
@@ -47,11 +47,12 @@ public function login(Request $request)
                     'success' => true,
                     'token' => $token,
                     'expires_at' => $expiresAt,
-                    'expires_in' => 5 * 60, // 5 minutes in seconds
+                    'expires_in' => 24 * 60 * 60, 
                     'user' => [
-                        'id' => $user->id,
+                    
                         'name' => $user->name,
                         'email' => $user->email,
+                        
                     ],
                     'redirect' => $user->role === 'admin' ? '/dashboard' : '/'
                 ]);
@@ -59,9 +60,9 @@ public function login(Request $request)
 
             // Regular form submission
             if ($user->role === 'admin') {
-                return redirect()->intended('/dashboard')->with('success', 'Welcome back, Admin! Token expires in 5 minutes.');
+                return redirect()->intended('/dashboard')->with('success', 'Welcome back, Admin! ');
             } else {
-                return redirect()->intended('/')->with('success', 'Login successful! Token expires in 5 minutes.');
+                return redirect()->intended('/')->with('success', 'Login successful! ');
             }
         }
 
@@ -112,12 +113,12 @@ public function login(Request $request)
         return response()->json([
             'success' => true,
             'message' => 'Logged out successfully from all sessions',
-            'redirect' => '/auth/login-basic'
+            'redirect' => '/signin'
         ]);
     }
 
     // Return redirect for traditional form submissions
-    return redirect('/auth/login-basic')->with('success', 'Logged out successfully!');
+    return redirect('/signin')->with('success', 'Logged out successfully!');
 }
 
 
@@ -142,31 +143,34 @@ public function login(Request $request)
         ], 401);
     }
 
-    $isExpired = $token->created_at->lessThan(now()->subMinutes(5));
+    $isExpired = $token->created_at->lessThan(now()->subHours(24));
 
     // If expired, delete the token and logout
     if ($isExpired) {
         $token->delete();
         Auth::logout();
-        session()->flush();
+                    $request->session()->invalidate();
+            $request->session()->regenerateToken();
+
+        // session()->flush();
         
         return response()->json([
             'valid' => false,
             'expired' => true,
             'message' => 'Token expired',
             'action' => 'clear_storage', // Tell frontend to clear localStorage
-            'redirect' => '/auth/login-basic'
+            'redirect' => '/signin'
         ], 401);
     }
 
-    $timeRemaining = $token->created_at->addMinutes(5)->diffInSeconds(now());
+    $timeRemaining = $token->created_at->addHours(24)->diffInSeconds(now());
 
     return response()->json([
         'valid' => true,
         'expired' => false,
         'time_remaining' => $timeRemaining,
         'created_at' => $token->created_at,
-        'expires_at' => $token->created_at->addMinutes(5),
+        'expires_at' => $token->created_at->addHours(24),
         'user' => [
             'id' => $request->user()->id,
             'name' => $request->user()->name,

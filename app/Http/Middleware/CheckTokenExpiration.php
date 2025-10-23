@@ -14,7 +14,7 @@ class CheckTokenExpiration
     {
         // Check if user is authenticated
         if (!Auth::check()) {
-            return redirect('/auth/login-basic')->with('error', 'Please login to access this page.');
+            return redirect('/signin')->with('error', 'Please login to access this page.');
         }
 
         $user = Auth::user();
@@ -25,7 +25,7 @@ class CheckTokenExpiration
             $accessToken = PersonalAccessToken::findToken($token);
             
             // If token is expired or invalid, logout user
-            if (!$accessToken || $accessToken->created_at->lessThan(now()->subMinutes(5))) {
+            if (!$accessToken || $accessToken->created_at->lessThan(now()->subHours(24))) {
                 // Delete expired token
                 $accessToken?->delete();
                 
@@ -38,7 +38,7 @@ class CheckTokenExpiration
 
                 session()->flush();
                 
-                return redirect('/auth/login-basic')->with('error', 'Your session has expired. Please login again.');
+                return redirect('/signin')->with('error', 'Your session has expired. Please login again.');
             }
         }
 

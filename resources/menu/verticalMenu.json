@@ -9,20 +9,20 @@
     {
       "name": "Product",
       "icon": "menu-icon icon-base bx bx-cube-alt",
-      "slug": "product",
+      "slug": "/dashboard/product",
       "submenu": [
         {
-          "url": "product",
+          "url": "/dashboard/product",
           "name": "All Product",
           "slug": "product"
         },
         {
-          "url": "product/create",
+          "url": "/dashboard/product/create",
           "name": "Create Product",
           "slug": "product-create"
         },
         {
-          "url": "productcategories",
+          "url": "/dashboard/productcategories",
           "name": "Product Category",
           "slug": "product-category"
         }
@@ -34,12 +34,12 @@
       "slug": "blog",
       "submenu": [
         {
-          "url": "blog",
+          "url": "/dashboard/blog",
           "name": "All Blog",
           "slug": "blog"
         },
         {
-          "url": "blog/create",
+          "url": "/dashboard/blog/create",
           "name": "Create Blog",
           "slug": "blog-create"
         }

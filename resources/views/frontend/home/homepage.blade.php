@@ -57,18 +57,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <a href="3d-printer.html">
+                    <a href="/products/3d-printer">
                         <div class="service-box text-center px-3 py-5 rounded-4 ">
                             <h3 class="fw-bold">3D Printers</h3>
                             <p>Turn your ideas into reality with high-precision, reliable 3D printing machines.</p>
                             <div class="service-img p-4 pb-0 pt-3 ">
-                                <img src="{{ asset('images/3d-printing.jpeg') }}" alt="3D Printers" class="img-fluid rounded-4">
+                                <img src="{{ asset('assets/img/images/3d-printing.jpeg') }}" alt="3D Printers" class="img-fluid rounded-4">
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4">
-                    <a href="3d-printing-resin.html">
+                    <a href="('/products/3d-printing-resin">
                         <div class="service-box text-center px-3 py-5  rounded-4 ">
                             <h3 class="fw-bold">3D Printing Resin</h3>
                             <p>Produce detailed, durable, and smooth-finish models with premium resin materials.</p>
@@ -79,7 +79,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4">
-                    <a href="3d-printing-service.html">
+                    <a href="/products/3d-printing-service">
                         <div class="service-box text-center px-3 py-5 rounded-4 ">
                             <h3 class="fw-bold">3D Printing Services</h3>
                             <p>From concept to final product — professional printing solutions tailored to your needs.

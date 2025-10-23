@@ -18,10 +18,10 @@ class CheckAdmin
                 return response()->json([
                     'success' => false,
                     'message' => 'Unauthenticated.',
-                    'redirect' => '/auth/login-basic'
+                    'redirect' => '/signin'
                 ], 401);
             }
-            return redirect('/auth/login-basic')->with('error', 'Please login to access this page.');
+            return redirect('/signin')->with('error', 'Please login to access this page.');
         }
 
         // Get the user (either from session or token)
@@ -33,7 +33,7 @@ class CheckAdmin
         // Additional security: Check if this is a logout scenario
         if ($this->isLogoutScenario($request)) {
             $this->forceLogout();
-            return redirect('/auth/login-basic')->with('error', 'Your session has been terminated.');
+            return redirect('/signin')->with('error', 'Your session has been terminated.');
         }
 
         // Check if user has admin role
@@ -54,7 +54,7 @@ class CheckAdmin
             return response()->json([
                 'success' => false,
                 'message' => 'Token invalid or expired.',
-                'redirect' => '/auth/login-basic'
+                'redirect' => '/signin'
             ], 401);
         }
 
@@ -86,7 +86,7 @@ class CheckAdmin
         }
 
         // Check if token is expired (5 minutes)
-        if ($accessToken->created_at->lessThan(now()->subMinutes(5))) {
+        if ($accessToken->created_at->lessThan(now()->subHours(24))) {
             $accessToken->delete(); // Delete expired token
             return false;
         }
@@ -130,7 +130,7 @@ class CheckAdmin
         }
 
         $token = $user->currentAccessToken();
-        return !$token->created_at->lessThan(now()->subMinutes(5));
+        return !$token->created_at->lessThan(now()->subHours(24));
     }
 
     /**
