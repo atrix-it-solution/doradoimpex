@@ -4,7 +4,7 @@
       "name": "Dashboard",
       "icon": "menu-icon icon-base bx bx-home-smile",
       "slug": "dashboard",
-      "url": "/"
+      "url": "/dashboard"
     },
     {
       "name": "Product",

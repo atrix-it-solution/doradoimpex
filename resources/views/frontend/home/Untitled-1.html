@@ -446,3 +446,146 @@ document.getElementById('register-Form').addEventListener('submit', async functi
     }
 });
 </script>
+
+
+
+
+
+
+
+@extends('frontend.layouts.navbarlayout')
+
+@section('title', $category->name)
+
+@section('main')
+    <!-- ================ Page Heading Start ================ -->
+    <div class="page-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content">
+                        <h1>{{ $category->name }}</h1>
+                        <p class="lead">Professional 3D printing solutions for every need</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================ Page Heading End ================ -->
+
+    <!-- ================ Page Content Start ================ -->
+    <div class="page-content sec-padding sec-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- DYNAMIC 3D PRINTER PRODUCTS -->
+                    <div class="printer-products">
+                        <h2 class="mb-4">Our {{ $category->name }} Collection</h2>
+                        
+                        @if($products->count() > 0)
+                        <div class="row g-4">
+                            @foreach($products as $product)
+                            <div class="col-lg-6">
+                                <div class="printer-product-card shadow py-3 rounded-4 h-100">
+                                    <div class="product-img-wrapper p-4 text-center">
+                                        @if($product->image)
+                                            <img src="{{ Storage::url($product->image) }}" 
+                                                 alt="{{ $product->title }}" 
+                                                 class="rounded-3 img-fluid" 
+                                                 style="max-height: 200px; object-fit: contain;">
+                                        @else
+                                            <img src="{{ Vite::asset('resources/assets/images/default-product.png') }}" 
+                                                 alt="Default Product" 
+                                                 class="rounded-3 img-fluid"
+                                                 style="max-height: 200px; object-fit: contain;">
+                                        @endif
+                                    </div>
+                                    <div class="product-heading px-4">
+                                        <h5 class="text-center">{{ $product->title }}</h5>
+                                    </div>
+                                    <div class="product-description px-4 mt-3">
+                                        <p class="text-center">
+                                            {{ Str::limit(strip_tags($product->description), 150) }}
+                                        </p>
+                                    </div>
+                                    <div class="product-actions px-4 mt-3 text-center">
+                                        <a href="{{ route('products.show', $product->slug) }}" class="btn btn-primary">
+                                            <i class="fa-solid fa-eye me-2"></i>View Details
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        @else
+                        <div class="alert alert-info text-center mt-5">
+                            <h4>No {{ $category->name }} Products Available</h4>
+                            <p>We're currently updating our {{ strtolower($category->name) }} collection. Please check back soon!</p>
+                        </div>
+                        @endif
+                    </div>
+
+                    <!-- Your existing static content remains the same -->
+                    <div class="desc-1 mt-5">
+                        <h2>Why Choose Our 3D Printers?</h2>
+                        <ul>
+                            <li>Pre-configured settings optimize print quality without additional user adjustments</li>
+                            <li>Fast heat-up in just 15 minutes with adjustable temperatures up to 50°C</li>
+                            <li>Designed for continuous 24/7 printing with robust build plates</li>
+                            <li>Auto-cooling safety features for worry-free operation</li>
+                            <li>Easy modular part replacement and technical support</li>
+                        </ul>
+                    </div>
+
+                    <!-- Continue with your existing service features -->
+                </div>
+
+                <div class="col-lg-4 ps-lg-3">
+                    <div class="app-right-sec">
+                        <div class="sec-heading">
+                            <h3>Product Categories</h3>
+                            <hr>
+                        </div>
+                        <div class="app-pages-link-wrapper">
+                            <ul class="list-unstyled">
+                                <li class="active">
+                                    <!-- Use simple URL instead of named route -->
+                                    <a href="/products/3d-printer" class="fw-bold text-primary">
+                                        <i class="fa-solid fa-print me-2"></i>3D Printer
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- Use simple URL instead of named route -->
+                                    <a href="/products/3d-printer-software">
+                                        <i class="fa-solid fa-computer me-2"></i>3D Printer Software
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- Use simple URL instead of named route -->
+                                    <a href="/products/3d-printing-resin">
+                                        <i class="fa-solid fa-flask me-2"></i>3D Printing Resin
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- Use simple URL instead of named route -->
+                                    <a href="/products/3d-printing-service">
+                                        <i class="fa-solid fa-gears me-2"></i>3D Printing Service
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Your existing CTA and other sidebar content -->
+                        <div class="app-cta rounded-3 mt-4">
+                            <div class="cta-sub-heading">Special Offer</div>
+                            <h4 class="mt-2 mb-3">Save More as You Buy More – Up to 50% Off!</h4>
+                            <div>
+                                <a href="/contact" class="button-3 py-2">Get a Quote Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

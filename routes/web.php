@@ -58,7 +58,37 @@ Route::get('/products/3d-printing-service', function () {
 // ================ SINGLE PRODUCT ROUTE ================
 Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
 
+// Static product routes
+Route::get('/products/dp-300-professional-3d-printer', function () {
+    return view('frontend.pages.products.single.dp-300');
+});
 
+Route::get('/products/dp-500-industrial-3d-printer', function () {
+    return view('frontend.pages.products.single-product.dp-500');
+});
+
+Route::get('/single-products/dp-200-compact-3d-printer', function () {
+    return view('frontend.pages.products.single.dp-200');
+});
+Route::get('/single-products/flex-resin-200', function () {
+    return view('frontend.pages.products.single.flex-resin-200');
+})->name('products.flex-resin');
+
+Route::get('/single-products/dental-resin-pro', function () {
+    return view('frontend.pages.products.single.dental-resin-pro');
+})->name('products.dental-resin');
+
+Route::get('/single-products/tough-resin-x500', function () {
+    return view('frontend.pages.products.single.tough-resin-x500');
+})->name('products.tough-resin');
+
+Route::get('/single-products/clear-resin-ultra', function () {
+    return view('frontend.pages.products.single.clear-resin-ultra');
+})->name('products.clear-resin');
+
+Route::get('/products/dp-700-ultra-precision-3d-printer', function () {
+    return view('frontend.pages.products.single.dp-700');
+});
 Route::get('/applications/automotive', function () {
     return view('frontend.pages.applications.automotive');
 });

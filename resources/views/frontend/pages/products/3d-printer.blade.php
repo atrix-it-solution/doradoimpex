@@ -29,7 +29,7 @@
                         <div class="row g-4">
                             @foreach($products as $product)
                             <div class="col-lg-6">
-                                <a href="{{ route('products.show', $product->slug) }}" class="text-decoration-none">
+                                <a href='/products/dp-200-compact-3d-printer' class="text-decoration-none">
                                     <div class="printer-product-card shadow py-2 rounded-4">
                                         <div class="product-img-wrapper p-4">
                                             <img src="{{ Storage::url($product->image) }}" alt="app product image"

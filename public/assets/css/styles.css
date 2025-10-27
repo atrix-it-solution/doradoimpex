@@ -173,13 +173,13 @@ a:hover {
   z-index: 1;
 }
 .banner-slider .slide-1 {
-  background: url(../images/landing-Banner-1.jpg) no-repeat center center/cover;
+  background: url(../img/images/landing-Banner-1.jpg) no-repeat center center/cover;
 }
 .banner-slider .slide-2 {
-  background: url(../images/landing-Banner-2.jpg) no-repeat center center/cover;
+  background: url(../img/images/landing-Banner-2.jpg) no-repeat center center/cover;
 }
 .banner-slider .slide-3 {
-  background: url(../images/landing-Banner-1.jpg) no-repeat center center/cover;
+  background: url(../img/images/landing-Banner-1.jpg) no-repeat center center/cover;
 }
 .banner-slider {
   color: white;
@@ -310,7 +310,7 @@ a:hover {
 
 /* ================ CTA Css Start ================  */
 .cta-section {
-  background: url(../images/Business-con-banner.jpg) no-repeat center
+  background: url(../img/images/Business-con-banner.jpg) no-repeat center
     center/cover;
   color: white;
   position: relative;

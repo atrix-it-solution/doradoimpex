@@ -21,13 +21,15 @@
         integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom css file link  -->
-     @vite(['resources/assets/css/styles.css'])
-     @vite(['resources/assets/css/about.css'])
-     @vite(['resources/assets/css/blog.css'])
-     @vite(['resources/assets/css/contact.css'])
-     @vite(['resources/assets/css/products-pages.css'])
-     @vite(['resources/assets/css/application-page.css'])
-     @vite(['resources/assets/css/signup-signin-form.css'])
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/application-page.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/products-pages.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/about.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/contact.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/blog.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/signup-signin-form.css') }}">
+
+
 
 
 </head>
