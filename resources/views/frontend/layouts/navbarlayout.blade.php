@@ -274,7 +274,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- custom js file   -->
-    <script src="{{ Vite::asset('resources/assets/js/script.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
 
     <script>
         class AuthManager {

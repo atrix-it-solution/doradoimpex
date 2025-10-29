@@ -162,8 +162,13 @@
     margin-bottom: 40px;
 }
 .vertical-product-slider .product-card ul li{
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     font-size: 15px;
+}
+.vertical-product-slider .product-card p{
+    font-size: 17px;
+    color: #f97316;
+    margin-bottom: 10px;
 }
 .vertical-product-slider .product-card h5{
     font-size: 17px;

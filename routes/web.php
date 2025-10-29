@@ -33,18 +33,8 @@ Route::get('/contact', function () {
 });
 
 // 3D Printer page - get products by category relationship
-Route::get('/products/3d-printer', function () {
-    $category = ProductCategory::where('slug', '3d-printer')->firstOrFail();
-    $products = $category->products;
-    return view('frontend.pages.products.3d-printer', compact('products', 'category'));
-})->name('products.3d-printer');
-
-// 3D Printing Resin page - get products by category relationship
-Route::get('/products/3d-printing-resin', function () {
-    $category = ProductCategory::where('slug', '3d-printing-resin')->firstOrFail();
-    $products = $category->products;
-    return view('frontend.pages.products.3d-printing-resin', compact('products', 'category'));
-})->name('products.3d-printing-resin');
+Route::get('/products/3d-printer', [ProductController::class, 'showCategory'])->name('products.3d-printer');
+Route::get('/products/3d-printing-resin', [ProductController::class, 'showCategory'])->name('products.3d-printing-resin');
 
 // Other product category pages - ADD MISSING ROUTE NAMES
 Route::get('/products/3d-printer-software', function () {

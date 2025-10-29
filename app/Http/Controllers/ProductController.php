@@ -56,40 +56,79 @@ class ProductController extends Controller
         return redirect()->route('product.index')->with('success', 'Product created successfully!');
     }
 
-  /**
-     * Display the specified resource - Single Product Page
-     */
-    public function show($slug)
-    {
-        $product = Product::with('categories')
-            ->where('slug', $slug)
-            ->firstOrFail();
-
-        // Get related products (same category)
-        $relatedProducts = Product::whereHas('categories', function($query) use ($product) {
-            $query->whereIn('product_categories.id', $product->categories->pluck('id'));
-        })
-        ->where('id', '!=', $product->id)
-        ->take(4)
-        ->get();
-
-        return view('frontend.pages.products.single', compact('product', 'relatedProducts'));
-    }
-
     /**
-     * Display products by category
+     * Display category page for specific category routes
      */
-    public function category($categorySlug)
+    public function showCategory(Request $request)
     {
-        $category = ProductCategory::where('slug', $categorySlug)->firstOrFail();
+        $path = $request->path();
+        $slug = str_replace('products/', '', $path);
         
+        // Define category mappings with 'title' field
+        $categoryMappings = [
+            '3d-printer' => '3D Printer',
+            '3d-printing-resin' => '3D Printing Resin',
+        ];
+        
+        if (!array_key_exists($slug, $categoryMappings)) {
+            abort(404);
+        }
+        
+        // Find or create category with title field
+        $category = ProductCategory::firstOrCreate(
+            ['slug' => $slug],
+            [
+                'title' => $categoryMappings[$slug],
+                'slug' => $slug
+            ]
+        );
+        
+        // Get products for this category
         $products = Product::whereHas('categories', function($query) use ($category) {
             $query->where('product_categories.id', $category->id);
         })->get();
 
-        return view('frontend.pages.products.category', compact('category', 'products'));
+        // Debug: Check what's happening
+        \Log::info("Category: {$category->title}, Products count: " . $products->count());
+
+        // Return different views based on category slug
+        switch($slug) {
+            case '3d-printer':
+                return view('frontend.pages.products.3d-printer', compact('category', 'products'));
+            case '3d-printing-resin':
+                return view('frontend.pages.products.3d-printing-resin', compact('category', 'products'));
+            
+            default:
+                abort(404);
+        }
+    }
+    /**
+     * Display the specified resource - Single Product Page
+     */
+    public function show($slug)
+    {
+        // Check if it's a product
+        $product = Product::with('categories')
+            ->where('slug', $slug)
+            ->first();
+
+        if ($product) {
+            // Get related products (same category)
+            $relatedProducts = Product::whereHas('categories', function($query) use ($product) {
+                $query->whereIn('product_categories.id', $product->categories->pluck('id'));
+            })
+            ->where('id', '!=', $product->id)
+            ->take(4)
+            ->get();
+
+            return view('frontend.pages.products.singleproductpage', compact('product', 'relatedProducts'));
+        }
+
+        // If not found, return 404
+        abort(404);
     }
 
+    
     /**
      * Show the form for editing the specified resource.
      */
